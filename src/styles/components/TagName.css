@@ -1,0 +1,23 @@
+:root {
+    --main-color: #FF6060;
+    --main-text-color: #FFFFFF;
+}
+
+.tag-name {
+    display: flex;
+    align-items: center;
+    gap: .375rem;
+    padding: 6px 0
+}
+
+.sub-tag-name {
+    border-radius: .625rem;
+    padding: 6px 10px;
+    background-color: var(--main-color);
+}
+
+.tag-text {
+    margin: 0;
+    color: var(--main-text-color);
+    text-align: center;
+}

@@ -1,0 +1,48 @@
+:root {
+    --main-color: #FF6060;
+    --main-text-color: #FFFFFF;
+}
+
+.header {
+    padding: 0 30px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    height: 3.125rem;
+}
+
+.navigation {
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+    padding: 1rem 0;
+    gap: 3.125rem;
+    overflow-x: auto;
+}
+
+
+.nav-option {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1.5rem;
+    /* text-decoration-line: underline; */
+    /* TODO: sur class active */
+    color: var(--main-color);
+    white-space: nowrap;
+}
+
+@media (max-width: 400px) {
+
+    .navigation {
+        gap: .9375rem;
+    }
+
+    .nav-option {
+        font-size: .75rem;
+        text-transform: uppercase;
+    }
+}

@@ -1,0 +1,28 @@
+:root {
+    --main-color: #FF6060;
+    --main-text-color: #FFFFFF;
+}
+
+.footer {
+    width: 100%;
+    padding: .9375rem;
+    background-color: #2D2D2D;
+    text-align: center;
+}
+
+.logo {
+    height: 2.5rem;
+}
+
+.credits {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1.5rem;
+    color: var(--main-text-color);
+}
+
+@media (max-width: 400px) {
+    .credits {
+        font-size: .75rem;
+    }
+}
