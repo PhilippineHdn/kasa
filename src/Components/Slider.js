@@ -1,26 +1,50 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useParams } from "react-router-dom";
-import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
-import { Carousel } from 'react-responsive-carousel';
 import kasasListData from '../data/kasasItems';
+import ArrowRight from '../assets/img/right_arrow.svg';
+import ArrowLeft from '../assets/img/left_arrow.svg';
 import '../styles/components/Slider.css';
 
 
 const Slider = () => {
     const idKasa = useParams('id').id;
     const dataCurrentKasa = kasasListData.find(data => data.id === idKasa);
+
+    const [currentIndex, setCurrentIndex] = useState(0)
+
+    const nextSlide = () => {
+        setCurrentIndex(currentIndex + 1)
+        if(currentIndex === dataCurrentKasa.pictures.length - 1)
+        setCurrentIndex(0)
+    }
+
+    const prevSlide = () => {
+        setCurrentIndex(currentIndex - 1)
+        if(currentIndex === 0)
+        setCurrentIndex(dataCurrentKasa.pictures.length - 1)
+    }
     
     return (
-        <Carousel 
-            className='slider' 
-            infiniteLoop
-        >
-            {dataCurrentKasa.pictures.map((picture, index) => (
-                <div key={index}>
-                    <img src={picture} alt="" className='picture' />
-                </div>
-            ))}
-        </Carousel>
+
+        <section className='slider' style={{backgroundImage : `url(${dataCurrentKasa.pictures[currentIndex]})`}}>
+            {dataCurrentKasa.pictures.length > 1 && 
+                <>
+                    <img 
+                        className='slider-arrow-left' 
+                        src={ArrowLeft} 
+                        alt="show next slider" 
+                        onClick={prevSlide}
+                    />
+                    <img 
+                        className='slider-arrow-right' 
+                        src={ArrowRight} 
+                        alt="show previous slider" 
+                        onClick={nextSlide}
+                    />
+                    <p className='slideCount'> {currentIndex + 1} / {dataCurrentKasa.pictures.length} </p>
+                </>
+            }
+        </section>
     );
 };
 
