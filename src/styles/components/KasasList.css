@@ -20,6 +20,12 @@
     border-radius: 10px;
     position: relative;
     overflow: hidden;
+    transition: width 0.5s ease 0s, height 1s ease 0s;
+}
+
+.kasa:hover {
+    width: 350px;
+    height: 350px;
 }
 
 .kasa::after {
@@ -46,11 +52,12 @@
     text-overflow: ellipsis;
     white-space: nowrap; */
     font-size: 1.125rem;
+    font-weight: 400;
     color: var(--main-text-color);
     z-index: 100;
 }
 
-@media (max-width: 400px) {
+@media (max-width: 850px) {
     .kasas-list {
         padding: 0;
         background-color: var(--main-text-color);

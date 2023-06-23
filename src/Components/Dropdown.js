@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
-import { useParams } from "react-router-dom";
-import kasasListData from '../data/kasasItems';
+import { useLocation } from 'react-router-dom';
 import downArrow from '../assets/img/down_arrow.svg'
 import upArrow from '../assets/img/up_arrow.svg';
 import '../styles/components/Dropdown.css';
 
-const Dropdown = () => {
+const Dropdown = (props) => {
 
-    const idKasa = useParams('id').id;
-    const dataCurrentKasa = kasasListData.find(data => data.id === idKasa);
+    const dropdownTitle = props.dropdownTitle;
+    const content = props.content;
+    const location = useLocation();
 
     const [dropdownState, setdropdownState] = useState(false);
 
@@ -17,19 +17,22 @@ const Dropdown = () => {
     }
 
     const toggleClassCheck = dropdownState ? 'display' : 'hidden';
-
     return (
-        <div className="dropdown">
+        <div className={ location.pathname === '/about' ? "about-dropdown" : "dropdown" } >
             <button type="button" className="button" onClick={handleClick} >
-                <p>Équipements</p>
-                <img src={toggleClassCheck === 'hidden' ? downArrow : upArrow} alt='up-arrow'/>
+                <p>{dropdownTitle}</p>
+                <img src={toggleClassCheck === 'hidden' ? downArrow : upArrow} className={toggleClassCheck === 'hidden' ? 'down-arrow' : 'up-arrow'} alt='arrow'/>
             </button>
             <div className={`dropdown-list-${toggleClassCheck}`}>
-                <ul className='list-options'>
-                    {dataCurrentKasa.equipments.map((equipment, index) => (
-                        <li className='list-option' key={index}>{equipment}</li>
-                    ))}
-                </ul>
+                
+                    {Array.isArray(content) ? 
+                        content.map((equipment, index) => (
+                            <ul className='list-options'>
+                                <li key={index}>{equipment}</li>
+                            </ul>
+                        ))
+                    : <p className='dropdown-text'>{content}</p>
+                    }
             </div>
         </div>
     );

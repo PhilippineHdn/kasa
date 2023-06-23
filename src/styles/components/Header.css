@@ -29,13 +29,25 @@
     font-style: normal;
     font-weight: 500;
     font-size: 1.5rem;
-    /* text-decoration-line: underline; */
-    /* TODO: sur class active */
     color: var(--main-color);
     white-space: nowrap;
 }
 
-@media (max-width: 400px) {
+.nav-active {
+    text-decoration: underline;
+    color: var(--main-color);
+}
+
+.nav-inactive {
+    text-decoration: none;
+}
+
+.nav-inactive:hover {
+    text-decoration: underline;
+    color: var(--main-color);
+}
+
+@media (max-width: 500px) {
 
     .navigation {
         gap: .9375rem;

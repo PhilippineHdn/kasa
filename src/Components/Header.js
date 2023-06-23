@@ -1,18 +1,23 @@
 import React from 'react';
-import { NavLink } from "react-router-dom"
+import { useTranslation } from 'react-i18next';
+import { NavLink } from "react-router-dom";
 import logo from '../assets/img/logo.jpg';
 import '../styles/components/Header.css';
 
 const Header = () => {
+    const { t, i18n } = useTranslation();
     return (
         <div className='header'>
-            <img src={logo} alt="logo KASA" className='logo' />
+            <NavLink to='/'>
+                <img src={logo} alt="logo KASA" className='logo' />
+            </NavLink>
             <ul className='navigation'>
-                <NavLink to="/" style={{ textDecoration: 'none' }}>
-                    <li className='nav-option'>Accueil</li>
+                <NavLink to="/" className={(nav) => (nav.isActive ? "nav-active" : "nav-inactive")} >
+                    <li className='nav-option'>{t('homepage')}</li>
                 </NavLink>
-                <li className='nav-option'>A propos</li>
-                {/* TODO: add a navlink and create a specific router file */}
+                <NavLink to="/about" className={(nav) => (nav.isActive ? "nav-active" : "nav-inactive")} >
+                    <li className='nav-option'>{t('about')}</li>
+                </NavLink>
             </ul>
         </div>
     );

@@ -62,7 +62,7 @@
     display: none;
 }
 
-@media (max-width: 400px) {
+@media (max-width: 500px) {
     .information {
         flex-direction: column;
     }
@@ -107,3 +107,23 @@
         gap: .75rem;
     }
 }
+
+@media (min-width: 501px) and (max-width: 700px) {
+    .kasa-main-title {
+        font-size: 1.5rem;
+    }
+
+    .kasa-host {
+        font-size: 16px;
+    }
+
+    .information {
+        align-items: flex-start;
+    }
+
+    .dropdown-line {
+        flex-direction: column;
+        gap: .75rem;
+    }
+
+  }

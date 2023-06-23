@@ -35,7 +35,7 @@
     white-space: nowrap;
 }
 
-@media (max-width: 400px) {
+@media (max-width: 500px) {
     .banner {
         height: 6.875rem;
     }
