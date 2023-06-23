@@ -11,6 +11,42 @@
     overflow: hidden;
 }
 
+.banner-home-page {
+    animation: banner-home-page 1s ease 0s 1 normal forwards;
+}
+
+@keyframes banner-home-page {
+	0% {
+		opacity: 0;
+		transform: rotateX(-100deg);
+		transform-origin: top;
+	}
+
+	100% {
+		opacity: 1;
+		transform: rotateX(0deg);
+		transform-origin: top;
+	}
+}
+
+.banner-about-page {
+    animation: banner-about-page 1s ease 0s 1 normal forwards;
+}
+
+@keyframes banner-about-page {
+	0% {
+		opacity: 0;
+		transform: rotateY(100deg);
+		transform-origin: left;
+	}
+
+	100% {
+		opacity: 1;
+		transform: rotateY(0);
+		transform-origin: left;
+	}
+}
+
 .banner-img {
     width: 100%;
     height: 100%;

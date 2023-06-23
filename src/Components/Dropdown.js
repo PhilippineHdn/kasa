@@ -18,23 +18,22 @@ const Dropdown = (props) => {
 
     const toggleClassCheck = dropdownState ? 'display' : 'hidden';
     return (
-        <div className={ location.pathname === '/about' ? "about-dropdown" : "dropdown" } >
-            <button type="button" className="button" onClick={handleClick} >
+         <div className={ location.pathname === '/about' ? "about-dropdown" : "dropdown" }> 
+            <button type="button" className="button" onClick={handleClick}>
                 <p>{dropdownTitle}</p>
                 <img src={toggleClassCheck === 'hidden' ? downArrow : upArrow} className={toggleClassCheck === 'hidden' ? 'down-arrow' : 'up-arrow'} alt='arrow'/>
             </button>
             <div className={`dropdown-list-${toggleClassCheck}`}>
-                
                     {Array.isArray(content) ? 
                         content.map((equipment, index) => (
                             <ul className='list-options'>
                                 <li key={index}>{equipment}</li>
                             </ul>
                         ))
-                    : <p className='dropdown-text'>{content}</p>
+                        : <p className='dropdown-text'>{content}</p>
                     }
             </div>
-        </div>
+         </div>
     );
 };
 

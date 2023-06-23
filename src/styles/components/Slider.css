@@ -10,6 +10,17 @@
     background-position: center;
     background-size: cover;
     margin: 1.25rem;
+    animation: slider-opening 1.5s ease 0s 1 normal forwards;
+}
+
+@keyframes slider-opening {
+	0% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+	}
 }
 
 .slider-arrow-left, .slider-arrow-right {

@@ -8,7 +8,7 @@ const Banner = (props) => {
     const location = useLocation();
     const image = props.image;
     return (
-        <div className='banner'>
+        <div className={ location.pathname === '/about' ? 'banner banner-about-page' : 'banner banner-home-page'}>
             <img src={image} className='banner-img' alt='landscape' />
             <div className={ location.pathname === '/about' ? '' : 'img-overlay'}>
                 <span className='text'>{t('bannerTitleLeft')}</span>
