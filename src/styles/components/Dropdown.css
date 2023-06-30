@@ -39,25 +39,14 @@
 }
 
 .dropdown-list-hidden {
-    display: none; 
-}
-
-
-@keyframes close-dropdown {
-	0% {
-		opacity: 1;
-		transform: rotateX(0deg);
-		transform-origin: top;
-	}
-
-	100% {
-		opacity: 0;
-		transform: rotateX(70deg);
-		transform-origin: top;
-	}
+    max-height: 0;
+    padding: 0px 12px;
+    background-color: var(--light-background);
+    transition: max-height ease 500ms, padding ease 400ms;
 }
 
 .dropdown-list-display {
+    max-height: 500px;
     padding: 12px;
     background-color: var(--light-background);
     animation: dropdown-opening 0.5s ease 0s 1 normal forwards;
