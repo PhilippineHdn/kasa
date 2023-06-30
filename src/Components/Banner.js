@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 import '../styles/components/Banner.css';
 
 const Banner = (props) => {
-    const { t, i18n } = useTranslation();
+    const { t } = useTranslation();
     const location = useLocation();
     const image = props.image;
     return (

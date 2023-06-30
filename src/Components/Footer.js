@@ -4,7 +4,7 @@ import logo from '../assets/img/LOGO.svg';
 import '../styles/components/Footer.css';
 
 const Footer = () => {
-    const { t, i18n } = useTranslation();
+    const { t } = useTranslation();
     return (
         <div className='footer'>
             <img className='logo' src={logo} alt="Kasa logo" /> 

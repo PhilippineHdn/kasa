@@ -1,6 +1,5 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { FaStar } from 'react-icons/fa';
 import Header from '../Components/Header';
 import Slider from '../Components/Slider';
 import TagName from '../Components/TagName';
@@ -13,7 +12,7 @@ import { useParams } from "react-router-dom";
 import '../styles/components/KasaInformation.css';
 
 const Kasa = () => {
-    const { t, i18n } = useTranslation();
+    const { t } = useTranslation();
     const idKasa = useParams('id').id;
     const dataCurrentKasa = kasasListData.find(data => data.id === idKasa);
     const description = dataCurrentKasa.description;
@@ -43,7 +42,7 @@ const Kasa = () => {
                         {[...Array(5)].map((star, index) => {
                             const ratingValue = index + 1;
                             return (
-                                <img key={index} src={ratingValue <= rating ? redStar : greyStar } alt="star" />
+                                <img key={`star-${index}`} src={ratingValue <= rating ? redStar : greyStar } alt="star" />
                             )
                         })}
                     </div>
