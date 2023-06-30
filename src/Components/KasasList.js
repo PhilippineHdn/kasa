@@ -7,8 +7,8 @@ const KasasList = () => {
     return (
         <div className='kasas-list'>
             {kasasListData.map(({ id, title, cover }) =>
-                <NavLink to={`kasa/${id}`} >
-                    <article key={id} className='kasa'>
+                <NavLink key={`route-${id}`} to={`kasa/${id}`} >
+                    <article key={`kasa-${id}`} className='kasa'>
                         <img className='kasa-cover' src={cover} alt={`${title} cover`} />
                         <h3 className='kasa-title'>{title}</h3>
                     </article>

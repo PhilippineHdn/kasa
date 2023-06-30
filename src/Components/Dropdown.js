@@ -17,6 +17,7 @@ const Dropdown = (props) => {
     }
 
     const toggleClassCheck = dropdownState ? 'display' : 'hidden';
+    
     return (
          <div className={ location.pathname === '/about' ? "about-dropdown" : "dropdown" }> 
             <button type="button" className="button" onClick={handleClick}>
@@ -26,8 +27,8 @@ const Dropdown = (props) => {
             <div className={`dropdown-list-${toggleClassCheck}`}>
                     {Array.isArray(content) ? 
                         content.map((equipment, index) => (
-                            <ul className='list-options'>
-                                <li key={index}>{equipment}</li>
+                            <ul key={`option-${index}`} className='list-options'>
+                                <li key={`route-${index}`}>{equipment}</li>
                             </ul>
                         ))
                         : <p className='dropdown-text'>{content}</p>

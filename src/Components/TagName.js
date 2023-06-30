@@ -11,7 +11,7 @@ const TagName = () => {
     return (
         <div className='tag-name'>
         {dataCurrentKasa.tags.map((tag, index) => (
-                <div key={index} className='sub-tag-name'>
+                <div key={`route-${index}`} className='sub-tag-name'>
                     <p className='tag-text'>{tag}</p>
                 </div>
             ))}
